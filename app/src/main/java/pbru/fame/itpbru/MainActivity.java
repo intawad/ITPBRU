@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         //myManage.addNewUser("1", "name", "sur", "user", "pass");
 
         //Delete All SQLite
-        //deleteAllSQLite();
+        deleteAllSQLite();
 
     } // Main Method เมธอด
 
