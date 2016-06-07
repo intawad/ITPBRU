@@ -1,6 +1,7 @@
 package pbru.fame.itpbru;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,7 +21,19 @@ public class MainActivity extends AppCompatActivity {
         //Test Add New User
         //myManage.addNewUser("1", "name", "sur", "user", "pass");
 
+        //Delete All SQLite
+        deleteAllSQLite();
+
     } // Main Method เมธอด
+
+    private void deleteAllSQLite() {
+
+        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyOpenHelper.database_name,
+                MODE_PRIVATE, null);
+
+        sqLiteDatabase.delete(MyManage.user_table, null, null);
+
+    } // delelteAllSQLite
 
     //  shift+command=enter(จะได้{})
     public void clickSignUpMain(View view) {
